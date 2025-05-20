@@ -1,3 +1,99 @@
-theme: jekyll-theme-minimal
-title: TechWorkshopSeattle's homepage
-description: Bookmark this to keep an eye on my project updates!
+# Site settings for Tech Workshop Seattle
+title: Tech Skills Workshop
+description: Master Today's Technology | Build Tomorrow's Solutions
+email: [Your Email]
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://techworkshopseattle.github.io" # the base hostname & protocol
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Workshop details
+workshop:
+  date: [Insert Date] # Will be dynamically calculated by JavaScript
+  time: [Insert Time]
+  location: [Insert Location]
+  contact_phone: [Your Phone Number]
+
+# Workshop tiers
+tiers:
+  bronze:
+    name: BRONZE TIER
+    price: $10
+    features:
+      - Microsoft Word essentials
+      - Excel fundamentals
+      - Typing skills improvement
+      - Email management
+      - Web browser efficiency
+      - File organization basics
+      - Digital security fundamentals
+  
+  silver:
+    name: SILVER TIER
+    price: $20
+    features:
+      - Mathematical software tools
+      - Introduction to programming
+      - Media content creation
+      - Data analysis basics
+      - Productivity apps mastery
+      - Cloud computing essentials
+      - Troubleshooting common tech issues
+  
+  gold:
+    name: GOLD TIER
+    price: $30
+    features:
+      - Website creation fundamentals
+      - Business plan development
+      - Digital marketing essentials
+      - Advanced productivity workflows
+      - Project management software
+      - Data visualization techniques
+      - Personal branding online
+
+# Items to bring
+bring_items:
+  - Notebook and pen
+  - Laptop (fully charged)
+  - Laptop charger
+  - Smartphone (fully charged)
+  - Phone charger
+  - Your technology questions
+  - A positive learning attitude!
+
+# Social media profiles
+social:
+  github: techworkshopseattle
+  twitter: # Add your Twitter username
+  linkedin: # Add your LinkedIn username
+  instagram: # Add your Instagram username
+
+# Google Analytics
+google_analytics: # Add your Google Analytics tracking ID
+
+# Collections
+collections: 
+  workshops:
+    output: true
+  testimonials:
+    output: false
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - .git/
+  - README.md
