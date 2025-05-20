@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Skills Workshop Brochure</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .brochure {
+            width: 210mm; /* A4 width */
+            height: 297mm; /* A4 height */
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            overflow: hidden;
+        }
+        
+        /* Left Sidebar */
+        .sidebar {
+            width: 30%;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .profile-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .instructor-name {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 10px 0 5px;
+        }
+        
+        .instructor-title {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .details-section {
+            flex: 1;
+            padding: 20px 0;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+        }
+        
+        .detail-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        /* Main Content */
+        .content {
+            width: 70%;
+            padding: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #4e4376;
+            padding-bottom: 15px;
+        }
+        
+        .workshop-title {
+            font-size: 36px;
+            color: #2b5876;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .workshop-subtitle {
+            font-size: 18px;
+            color: #4e4376;
+        }
+        
+        .intro {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #2b5876;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-left: 4px solid #4e4376;
+            padding-left: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Tier Cards */
+        .tiers {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .tier-card {
+            width: 32%;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tier-header {
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        .bronze .tier-header {
+            background: linear-gradient(135deg, #cd7f32, #b08d57);
+        }
+        
+        .silver .tier-header {
+            background: linear-gradient(135deg, #C0C0C0, #E8E8E8);
+        }
+        
+        .gold .tier-header {
+            background: linear-gradient(135deg, #FFD700, #FFC107);
+        }
+        
+        .tier-name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .tier-price {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .tier-body {
+            padding: 20px;
+        }
+        
+        .tier-features {
+            list-style-type: none;
+        }
+        
+        .tier-features li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .tier-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4e4376;
+            font-weight: bold;
+        }
+        
+        .bring-items {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .bring-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .bring-item {
+            width: 50%;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .bring-item:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #2b5876;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Registration Button */
+        .register-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .register-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #3a6f97, #5d5294);
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .brochure {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image">
+                    [Your profile photo here]
+                </div>
+                <h3 class="instructor-name">[Your Name]</h3>
+                <p class="instructor-title">Technology Workshop Instructor</p>
+            </div>
+            
+            <div class="details-section">
+                <div class="detail-item">
+                    <div class="detail-label">Date</div>
+                    <div class="detail-value" id="workshop-date">[Insert Date]</div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-label">Time</div>
+                    <div class="detail-value">[Insert Time]</div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-label">Location</div>
+                    <div class="detail-value">[Insert Location]</div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-label">Contact</div>
+                    <div class="detail-value">[Your Email]</div>
+                    <div class="detail-value">[Your Phone Number]</div>
+                </div>
+                
+                <div class="qr-code">
+                    [QR Code for registration will appear here]
+                </div>
+                
+                <a href="#" class="register-btn" id="register-button">REGISTER NOW</a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <div class="header">
+                <h1 class="workshop-title">TECH SKILLS WORKSHOP</h1>
+                <h2 class="workshop-subtitle">Master Today's Technology | Build Tomorrow's Solutions</h2>
+            </div>
+            
+            <div class="intro">
+                <h3 class="section-title">Why Attend Our Tech Workshop?</h3>
+                <p>Are you struggling with technology in your daily life or career? Need to enhance your digital skills but don't know where to start? Our Tech Skills Workshop is designed for anyone looking to gain confidence with technology, whether you're a complete beginner or looking to advance your existing skills.</p>
+                <p>In today's rapidly evolving digital landscape, technology skills are no longer optional—they're essential. Our workshop offers hands-on learning experiences tailored to your specific needs and skill level.</p>
+            </div>
+            
+            <div class="landscape">
+                <h3 class="section-title">The Technology Landscape</h3>
+                <p>The digital transformation continues to reshape how we work, communicate, and live. From basic computer literacy to advanced programming and web development, having a strong foundation in technology opens doors to countless opportunities. Our workshop helps you navigate this landscape with confidence.</p>
+            </div>
+            
+            <h3 class="section-title">Workshop Tiers</h3>
+            <div class="tiers">
+                <div class="tier-card bronze" id="bronze-tier">
+                    <div class="tier-header">
+                        <div class="tier-name">BRONZE TIER</div>
+                        <div class="tier-price">$10</div>
+                    </div>
+                    <div class="tier-body">
+                        <ul class="tier-features">
+                            <li>Microsoft Word essentials</li>
+                            <li>Excel fundamentals</li>
+                            <li>Typing skills improvement</li>
+                            <li>Email management</li>
+                            <li>Web browser efficiency</li>
+                            <li>File organization basics</li>
+                            <li>Digital security fundamentals</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tier-card silver" id="silver-tier">
+                    <div class="tier-header">
+                        <div class="tier-name">SILVER TIER</div>
+                        <div class="tier-price">$20</div>
+                    </div>
+                    <div class="tier-body">
+                        <ul class="tier-features">
+                            <li>Mathematical software tools</li>
+                            <li>Introduction to programming</li>
+                            <li>Media content creation</li>
+                            <li>Data analysis basics</li>
+                            <li>Productivity apps mastery</li>
+                            <li>Cloud computing essentials</li>
+                            <li>Troubleshooting common tech issues</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tier-card gold" id="gold-tier">
+                    <div class="tier-header">
+                        <div class="tier-name">GOLD TIER</div>
+                        <div class="tier-price">$30</div>
+                    </div>
+                    <div class="tier-body">
+                        <ul class="tier-features">
+                            <li>Website creation fundamentals</li>
+                            <li>Business plan development</li>
+                            <li>Digital marketing essentials</li>
+                            <li>Advanced productivity workflows</li>
+                            <li>Project management software</li>
+                            <li>Data visualization techniques</li>
+                            <li>Personal branding online</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bring-items">
+                <h3 class="section-title">What to Bring</h3>
+                <ul class="bring-list">
+                    <li class="bring-item">Notebook and pen</li>
+                    <li class="bring-item">Laptop (fully charged)</li>
+                    <li class="bring-item">Laptop charger</li>
+                    <li class="bring-item">Smartphone (fully charged)</li>
+                    <li class="bring-item">Phone charger</li>
+                    <li class="bring-item">Your technology questions</li>
+                    <li class="bring-item">A positive learning attitude!</li>
+                </ul>
+            </div>
+            
+            <div class="footer">
+                <p>Space is limited. Register today to secure your spot in our Tech Skills Workshop!</p>
+                <p id="days-left">Registration closes soon!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simple JavaScript to enhance the brochure interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight tier cards on click
+            const tierCards = document.querySelectorAll('.tier-card');
+            tierCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    tierCards.forEach(c => c.style.transform = 'translateY(0)');
+                    this.style.transform = 'translateY(-15px)';
+                });
+            });
+            
+            // Registration button effect
+            const registerBtn = document.getElementById('register-button');
+            registerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Thank you for your interest! Registration form will open soon.');
+            });
+            
+            // Set a sample workshop date (30 days from now)
+            const futureDate = new Date();
+            futureDate.setDate(futureDate.getDate() + 30);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('workshop-date').textContent = futureDate.toLocaleDateString('en-US', options);
+            
+            // Countdown display
+            const daysLeft = document.getElementById('days-left');
+            daysLeft.textContent = `Only ${30} days left to register!`;
+            
+            // Auto highlight tiers randomly for attention
+            function highlightRandom() {
+                const randomIndex = Math.floor(Math.random() * tierCards.length);
+                tierCards.forEach((card, index) => {
+                    if (index === randomIndex) {
+                        card.style.transform = 'translateY(-8px)';
+                        card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.2)';
+                    } else {
+                        card.style.transform = 'translateY(0)';
+                        card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                    }
+                });
+                setTimeout(() => {
+                    tierCards[randomIndex].style.transform = 'translateY(0)';
+                    tierCards[randomIndex].style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                }, 2000);
+            }
+            
+            // Run highlight effect every 5 seconds
+            setInterval(highlightRandom, 5000);
+        });
+    </script>
+</body>
+</html>
